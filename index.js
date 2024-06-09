@@ -35,14 +35,14 @@ async function getPokemonAndUpdateScreen(searchValue) {
     //console.log("RESPONSE STATUS: " + response.status);
 
     if(response.status !== 200) {
-        pokemonCryElement.setAttribute("src", "audio/Missingno_default_cry.ogg");
+        pokemonCryElement.setAttribute("src", "./audio/Missingno_default_cry.ogg");
         pokemonCryElement.load();
 
         pokemonNameElement.innerHTML = "MISSINGNO.";
     
         pokemonNumberElement.innerHTML = `No.0`;
     
-        pokemonImageElement.setAttribute("src", "images/Missingno_RB_centered.png");
+        pokemonImageElement.setAttribute("src", "./images/Missingno_RB_centered.png");
     
         pokemonTypesElement.innerHTML = `TYPE: ???`;
     
