@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokédex</title>
+    <link rel="icon" type="image/x-icon" href="/images/pokeball16fav.png">
+    <link rel="stylesheet" type="text/css" href="styles.css"/>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>Pokédex</h1>
+    </header>
+
+    <section class="pokedex-container">
+        <section class="pokedex-header-section">
+            <div class="blue-circle-border">
+                <div class="blue-circle"></div>
+            </div>
+            <div class="rgb-lights-container">
+                <div class="red-light"></div>
+                <div class="yellow-light"></div>
+                <div class="green-light"></div>
+            </div>
+        </section>
+        <section class="pokedex-screen-section">
+            <div class="screen">
+                    <p class="pokemon-name"></p>
+                    <p class="pokemon-number"></p>
+                    <img src="" alt="" class="pokemon-image sprite">
+                    <p class="pokemon-types"></p>
+                    <p class="pokemon-height"></p>
+                    <p class="pokemon-weight"></p>
+            </div> 
+        </section>
+        <section class="pokedex-buttons-section">
+            <form onsubmit="return false" class="search-bar-section"> <!--using a form in order to have the enter key trigger the button. onsubmit false seems required to stop the default form behavior of refreshing the page on a submit.-->
+                <input name="search" autocomplete="off" type="text" class="search-bar" placeholder="Enter Pokémon name/number">
+                <button class="search-button" onclick="searchPokemon()">Search</button>
+            </form>
+            <div class="buttons-container">
+                <button class="previous-button" onclick="prevPokemon()">Prev</button>
+                <button class="play-sound-button" onclick="playPokemonAudio()">Play Sound</button>
+                <audio src="" preload="auto" class="pokemon-cry-audio"></audio>
+                <button class="next-button" onclick="nextPokemon()">Next</button>
+            </div>
+            
+        </section>
+    </section>
+
+    <footer>
+        <span class="footer-name">Edrees Wahezi</span>
+        <button class="play-music-button" onclick="toggleMusic()">&#127925;</button>
+        <audio src="/audio/pokemoncenterthemeredblue.mp3" class="pokemon-center-theme-audio" preload="auto" loop></audio>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>

@@ -1,0 +1,301 @@
+*,
+*::before, 
+*::after {
+    box-sizing: border-box;
+    margin: 0; 
+    padding: 0;
+}
+
+body {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    font-family: vt323, Courier, monospace; 
+    font-size: 2rem;
+    min-height: 100vh;
+    background-color: #F4F3F2;
+}
+
+.vt323-regular {
+    font-family: "VT323", monospace;
+    font-weight: 400;
+    font-style: normal;
+}
+
+input, button {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.pokedex-container {
+    --main-bg-color: #dc0a2d;
+    --screen-border-color: #dedede; 
+    --outline-border-color: #600813;
+    --blue-circle-color: #29a9fc; 
+    --base-border-width: 4px; 
+    --screen-background-color: #86cbf2;
+    --pokedex-base-font-size: 2rem; 
+
+    font-family: vt323, Courier, monospace; 
+    font-size: var(--pokedex-base-font-size);
+
+
+    border: var(--base-border-width) solid var(--outline-border-color);
+    height: 700px;
+    width: 600px;
+    background-color: var(--main-bg-color);
+    border-radius: 25px;
+    padding: 2rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 16px;
+
+}
+
+/* Header Section */
+.pokedex-header-section {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+}
+
+.blue-circle-border {
+    border: var(--base-border-width) solid var(--outline-border-color);
+    background-color: var(--screen-border-color);
+    border-radius: 50%;
+    min-height: 80px;
+    width: 80px;
+    padding: 6px; 
+
+    display: flex;
+}
+
+.blue-circle {
+    border: var(--base-border-width) solid var(--outline-border-color);
+    background-color: var(--blue-circle-color);
+    border-radius: 50%;
+
+    flex: 1;
+}
+
+.rgb-lights-container {
+    display: flex; 
+    justify-content: center;
+    align-items: flex-start;
+    padding: 10px;
+    gap: 10px; 
+
+    height: 100%;
+}
+
+.red-light, .yellow-light, .green-light {
+    border: var(--base-border-width) solid var(--outline-border-color);
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+.red-light {
+    background-color:#af0e25;
+}
+
+.yellow-light {
+    background-color: #ceb92b;
+}
+
+.green-light {
+    background-color: #459958;
+}
+
+/* Screen Section */
+.pokedex-screen-section {
+    background-color: var(--screen-border-color);
+    border: var(--base-border-width) solid var(--outline-border-color);
+    border-radius: 10px;
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+
+} 
+
+.screen {
+    background-color: var(--screen-background-color);
+    border: var(--base-border-width) solid var(--outline-border-color);
+    border-radius: 10px;
+    height: 100%;
+    width: 100%;
+    flex: 1; 
+
+
+    padding: 1rem;
+
+    display: grid; 
+    gap: 1rem; 
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-areas: 
+        "image image name name"
+        "image image types types"
+        "image image height height" 
+        "number number weight weight";
+
+} 
+
+.pokemon-image {
+    grid-area: image;
+    min-height: auto;
+    width: 100%;
+    justify-self: center;
+    align-self: center;
+
+    /* disable antialiasing for scaled up sprite pngs */
+    image-rendering: pixelated;
+}
+
+.pokemon-types {
+    grid-area: types;
+    align-self: center;
+}
+
+.pokemon-number {
+    grid-area: number;
+    justify-self: center;
+}
+
+.pokemon-name {
+    grid-area: name;
+    align-self: center;
+}
+
+.pokemon-height {
+    grid-area: height;
+    align-self: center;
+}
+
+.pokemon-weight {
+    grid-area: weight;
+    align-self: center;
+}
+
+/* Button Section */
+.pokedex-buttons-section {
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 16px; 
+    width: 100%;
+    height: auto;
+
+}
+
+.search-bar-section {
+    display: flex; 
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: stretch;
+    gap: 6px;
+}
+
+.search-bar {
+    background-color: #51ae5e;
+    flex: 3;
+    border-radius: 2px;
+    border: var(--base-border-width) solid var(--outline-border-color);
+    outline: none;
+    font-size: 1.5rem;
+    padding: 10px;
+
+}
+
+.search-button {
+    background-color: #00312b;
+    flex: 2; 
+    border-radius: 2px;
+    border: var(--base-border-width) solid var(--outline-border-color);
+    color: var(--screen-border-color);
+
+}
+
+.search-button:hover, .search-bar:hover {
+    border-color: var(--screen-border-color);
+}
+
+.search-button:active {
+    border-color: var(--outline-border-color);
+}
+
+.buttons-container {
+    display: flex; 
+    justify-content: space-evenly;
+    align-items: stretch;
+    gap: 10px;
+}
+
+.previous-button, .play-sound-button, .next-button {
+    border-radius: 25px;
+    padding: 6px; 
+    flex: 1;
+    border: var(--base-border-width) solid var(--outline-border-color);
+    font-size: .8em;
+}
+
+.play-sound-button {
+    border-radius: 2px;
+}
+
+.previous-button:hover, .play-sound-button:hover, .next-button:hover {
+    border-color: var(--screen-border-color);
+
+}
+
+.previous-button:active, .play-sound-button:active, .next-button:active {
+    border-color: var(--outline-border-color);
+}
+
+.previous-button {
+    background-color: #c60c27;
+}
+
+.play-sound-button {
+    background-color: #2aa9fc;
+}
+
+.next-button {
+    background-color: #0d5e83;
+}
+
+/* Responsive Layout for smaller screens/mobile */
+@media (max-width: 600px) {
+    /*TODO: lessen side padding to make screen reach closer to page edges, might want to lessen border radius for screen and screen border, reformat how screen displays data. */
+    .pokedex-container {
+        width: 95%;
+        padding: 2rem .5rem;
+    }
+
+    .screen {
+        font-size: .8em;
+    }
+}
+
+header, footer {
+padding: 10px; 
+}
+
+.play-music-button {
+border-radius: 8px;
+padding: 2px;
+}
+
+.play-music-button:hover {
+border-style: dashed;
+}
+
+.play-music-button:active {
+border-style: solid;
+}
