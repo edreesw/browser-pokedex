@@ -110,6 +110,25 @@ input, button {
     background-color: #459958;
 }
 
+.play-music-button {
+    border-radius: 8px;
+    padding: 0px 10px;
+    background-color: inherit;
+    border: var(--base-border-width) solid var(--outline-border-color);
+    font-size: 1.4em;
+
+    align-self: center;
+    margin-left: auto;
+}
+
+.play-music-button:hover {
+    border-color: var(--screen-border-color);
+}
+
+.play-music-button:active {
+    border-color: var(--outline-border-color);
+}
+
 /* Screen Section */
 .pokedex-screen-section {
     background-color: var(--screen-border-color);
@@ -284,18 +303,5 @@ input, button {
 }
 
 header, footer {
-padding: 10px; 
-}
-
-.play-music-button {
-border-radius: 8px;
-padding: 2px;
-}
-
-.play-music-button:hover {
-border-style: dashed;
-}
-
-.play-music-button:active {
-border-style: solid;
+    padding: 10px; 
 }
