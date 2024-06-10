@@ -115,8 +115,6 @@ input, button {
     padding: 0px 10px;
     background-color: inherit;
     border: var(--base-border-width) solid var(--outline-border-color);
-    font-size: 1.4em;
-
     align-self: center;
     margin-left: auto;
 }
