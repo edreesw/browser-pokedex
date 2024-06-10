@@ -26,6 +26,12 @@ body {
 input, button {
     font-family: inherit;
     font-size: inherit;
+    color: black;
+}
+
+::placeholder {
+    color: black; 
+    opacity: 50%;
 }
 
 .pokedex-container {
